@@ -18,6 +18,11 @@ public class Person {
 	public Person() {
 		super();
 	}
+	
+	public Person(String nama) {
+		super();
+		this.nama = nama;
+	}
 
 	public Person(Long id, String nama) {
 		super();
@@ -39,5 +44,10 @@ public class Person {
 
 	public void setNama(String nama) {
 		this.nama = nama;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.id == ((Person)obj).getId();
 	}
 }

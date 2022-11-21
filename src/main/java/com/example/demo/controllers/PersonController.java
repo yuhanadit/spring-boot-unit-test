@@ -19,9 +19,15 @@ import com.example.demo.services.PersonService;
 @RequestMapping("/person")
 public class PersonController {
 
-	@Autowired
+	
 	PersonService personService;
 	
+	@Autowired
+	public PersonController(PersonService personService) {
+		super();
+		this.personService = personService;
+	}
+
 	@GetMapping
 	public List<Person> getAllPerson(){
 		return personService.getAllPerson();

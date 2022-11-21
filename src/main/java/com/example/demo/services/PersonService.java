@@ -13,9 +13,14 @@ import com.example.demo.repositories.PersonRepository;
 @Service
 public class PersonService {
 	
-	@Autowired
 	PersonRepository personRepository;
 	
+	@Autowired
+	public PersonService(PersonRepository personRepository) {
+		super();
+		this.personRepository = personRepository;
+	}
+
 	public List<Person> getAllPerson(){
 		List<Person> persons = new ArrayList<>();
 		
